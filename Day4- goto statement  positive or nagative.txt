@@ -1,0 +1,36 @@
+C programe use goto statement to determine whether a number is positive, negative, or zero:
+
+#include <stdio.h>
+
+int main() {
+    int num;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    if (num > 0)
+        goto positive;
+    else if (num < 0)
+        goto negative;
+    else
+        goto zero;
+
+positive:
+    printf("The number is positive.\n");
+    return 0;
+
+negative:
+    printf("The number is negative.\n");
+    return 0;
+
+zero:
+    printf("The number is zero.\n");
+    return 0;
+}
+
+Output:
+Enter a number: 7
+The number is positive.
+
+
+=== Code Execution Successful ===

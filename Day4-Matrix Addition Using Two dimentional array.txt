@@ -1,0 +1,54 @@
+C Program Matrix Addition Using Two-Dimensional:
+
+#include <stdio.h>
+
+int main() {
+    int a[2][2], b[2][2], sum[2][2];
+
+    // Input elements for matrix A
+    printf("Enter elements of matrix A (2x2):\n");
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            scanf("%d", &a[i][j]);
+        }
+    }
+
+    // Input elements for matrix B
+    printf("Enter elements of matrix B (2x2):\n");
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            scanf("%d", &b[i][j]);
+        }
+    }
+
+    // Add matrices A and B
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            sum[i][j] = a[i][j] + b[i][j];
+        }
+    }
+
+    // Display the result
+    printf("Sum of matrices:\n");
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            printf("%d ", sum[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
+
+Out put:
+Enter elements of matrix A (2x2):
+22 24 17 35
+Enter elements of matrix B (2x2):
+25 35 45 55
+Sum of matrices:
+47 59 
+62 90 
+
+
+=== Code Execution Successful ===

@@ -1,0 +1,56 @@
+
+C Program: Student Marks Table Using 2D Array:
+
+#include <stdio.h>
+
+int main() {
+    int marks[3][4];  // 3 students, 4 subjects
+
+    // Input marks
+    printf("Enter marks for 3 students in 4 subjects:\n");
+    for (int i = 0; i < 3; i++) {
+        printf("Student %d:\n", i + 1);
+        for (int j = 0; j < 4; j++) {
+            printf("  Subject %d: ", j + 1);
+            scanf("%d", &marks[i][j]);
+        }
+    }
+
+    // Display marks
+    printf("\nMarks Table:\n");
+    for (int i = 0; i < 3; i++) {
+        printf("Student %d: ", i + 1);
+        for (int j = 0; j < 4; j++) {
+            printf("%d ", marks[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
+Out put:
+Enter marks for 3 students in 4 subjects:
+Student 1:
+  Subject 1: 90
+  Subject 2: 99
+  Subject 3: 98
+  Subject 4: 100
+Student 2:
+  Subject 1: 98
+  Subject 2: 98
+  Subject 3: 97
+  Subject 4: 99
+Student 3:
+  Subject 1: 95
+  Subject 2: 98
+  Subject 3: 98
+  Subject 4: 98
+
+Marks Table:
+Student 1: 90 99 98 100 
+Student 2: 98 98 97 99 
+Student 3: 95 98 98 98 
+
+
+=== Code Execution Successful ===
