@@ -1,0 +1,32 @@
+C programe upper left-angled triangle:
+#include <stdio.h>
+
+int main() {
+    int i, j, rows;
+
+   
+    printf("Enter the number of rows: ");
+    scanf("%d", &rows);
+
+    // Loop to print the upper left-angled triangle
+    for (i = rows; i >= 1; i--) {
+        for (j = 1; j <= i; j++) {
+            printf("* ");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+Out put:
+Enter the number of rows: 7
+* * * * * * * 
+* * * * * * 
+* * * * * 
+* * * * 
+* * * 
+* * 
+* 
+
+
+=== Code Execution Successful ===
