@@ -1,0 +1,45 @@
+short an array in disassending order in c programe:
+
+#include <stdio.h>
+
+int main() {
+    int size;
+
+    printf("Enter number of elements: ");
+    scanf("%d", &size);
+
+    int arr[size];
+
+    printf("Enter %d elements:\n", size);
+    for (int i = 0; i < size; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    for (int i = 0; i < size - 1; i++) {
+        for (int j = 0; j < size - i - 1; j++) {
+            if (arr[j] < arr[j + 1]) {
+                // Swap
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+
+    printf("Sorted array in descending order:\n");
+    for (int i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+
+    return 0;
+}
+
+output:
+
+Enter number of elements: 4
+Enter 4 elements:
+43 72 88 65
+Sorted array in descending order:
+88 72 65 43 
+
+=== Code Execution Successful ===

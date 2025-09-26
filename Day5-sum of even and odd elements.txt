@@ -1,0 +1,38 @@
+sum of even and odd elements :
+
+#include <stdio.h>
+
+int main() {
+    int size, i;
+    int evenSum = 0, oddSum = 0;
+
+    printf("Enter number of elements: ");
+    scanf("%d", &size);
+
+    int arr[size];
+
+    printf("Enter %d elements:\n", size);
+    for (i = 0; i < size; i++) {
+        scanf("%d", &arr[i]);
+
+        if (arr[i] % 2 == 0)
+            evenSum += arr[i];
+        else
+            oddSum += arr[i];
+    }
+
+    printf("Sum of even elements = %d\n", evenSum);
+    printf("Sum of odd elements = %d\n", oddSum);
+
+    return 0;
+}
+
+out put:
+Enter number of elements: 4
+Enter 4 elements:
+65 72 55 75
+Sum of even elements = 72
+Sum of odd elements = 195
+
+
+=== Code Execution Successful ===

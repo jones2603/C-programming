@@ -1,0 +1,57 @@
+Add of three matrix:
+#include <stdio.h>
+int main() {
+    int rows, cols;
+    printf("Enter number of rows and columns: ");
+    scanf("%d %d", &rows, &cols);
+
+    int A[rows][cols], B[rows][cols], C[rows][cols], Sum[rows][cols];
+
+    printf("\nEnter elements of Matrix A:\n");
+    for (int i = 0; i < rows; i++)
+        for (int j = 0; j < cols; j++)
+            scanf("%d", &A[i][j]);
+
+    printf("\nEnter elements of Matrix B:\n");
+    for (int i = 0; i < rows; i++)
+        for (int j = 0; j < cols; j++)
+            scanf("%d", &B[i][j]);
+
+    printf("\nEnter elements of Matrix C:\n");
+    for (int i = 0; i < rows; i++)
+        for (int j = 0; j < cols; j++)
+            scanf("%d", &C[i][j]);
+
+    for (int i = 0; i < rows; i++)
+        for (int j = 0; j < cols; j++)
+            Sum[i][j] = A[i][j] + B[i][j] + C[i][j];
+
+    printf("\nSum of the three matrices:\n");
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++)
+            printf("%d\t", Sum[i][j]);
+        printf("\n");
+    }
+
+    return 0;
+}
+
+Output:
+Enter number of rows and columns: 3 3
+
+Enter elements of Matrix A:
+4 5 8 2 4 8 6 5 7
+
+Enter elements of Matrix B:
+6 17 3 8 3 9 34 34 15
+
+Enter elements of Matrix C:
+7 3 4 8 3 6 3 4 8
+
+Sum of the three matrices:
+17	25	15	
+18	10	23	
+43	43	30	
+
+
+=== Code Execution Successful ===

@@ -1,0 +1,83 @@
+multiplication of three matrix:
+
+#include <stdio.h>
+int main() {
+    int r1, c1, r2, c2, r3, c3;
+
+    printf("Enter rows and columns of Matrix A: ");
+    scanf("%d %d", &r1, &c1);
+
+    printf("Enter rows and columns of Matrix B: ");
+    scanf("%d %d", &r2, &c2);
+
+    printf("Enter rows and columns of Matrix C: ");
+    scanf("%d %d", &r3, &c3);
+
+    if (c1 != r2 || c2 != r3) {
+        printf("Matrix multiplication not possible with given dimensions.\n");
+        return 1;
+    }
+
+    int A[r1][c1], B[r2][c2], C[r3][c3];
+    int AB[r1][c2], ABC[r1][c3];
+
+    printf("\nEnter elements of Matrix A:\n");
+    for (int i = 0; i < r1; i++)
+        for (int j = 0; j < c1; j++)
+            scanf("%d", &A[i][j]);
+
+    printf("\nEnter elements of Matrix B:\n");
+    for (int i = 0; i < r2; i++)
+        for (int j = 0; j < c2; j++)
+            scanf("%d", &B[i][j]);
+
+    printf("\nEnter elements of Matrix C:\n");
+    for (int i = 0; i < r3; i++)
+        for (int j = 0; j < c3; j++)
+            scanf("%d", &C[i][j]);
+
+ 
+    for (int i = 0; i < r1; i++)
+        for (int j = 0; j < c2; j++) {
+            AB[i][j] = 0;
+            for (int k = 0; k < c1; k++)
+                AB[i][j] += A[i][k] * B[k][j];
+        }
+
+    for (int i = 0; i < r1; i++)
+        for (int j = 0; j < c3; j++) {
+            ABC[i][j] = 0;
+            for (int k = 0; k < c2; k++)
+                ABC[i][j] += AB[i][k] * C[k][j];
+        }
+
+    printf("\nResult of A × B × C:\n");
+    for (int i = 0; i < r1; i++) {
+        for (int j = 0; j < c3; j++)
+            printf("%d\t", ABC[i][j]);
+        printf("\n");
+    }
+
+    return 0;
+}
+
+Out put:
+Enter rows and columns of Matrix A: 2 2
+Enter rows and columns of Matrix B: 2 2
+Enter rows and columns of Matrix C: 2 2
+
+Enter elements of Matrix A:
+45 43 23 22
+
+Enter elements of Matrix B:
+23 45 64 12
+
+Enter elements of Matrix C:
+43 25 61 17
+
+Result of A × B × C:
+317842	137872	
+162530	70508	
+
+
+=== Code Execution Successful ===
