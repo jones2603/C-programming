@@ -1,0 +1,50 @@
+second largest element in an array:
+
+#include <stdio.h>
+#include <limits.h>
+
+int main() {
+    int n;
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    if (n < 2) {
+        printf("Need at least two elements to find the second largest.\n");
+        return 1;
+    }
+
+    int arr[n];
+    printf("Enter %d elements:\n", n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    int first = INT_MIN, second = INT_MIN;
+
+    for (int i = 0; i < n; i++) {
+        if (arr[i] > first) {
+            second = first;
+            first = arr[i];
+        } else if (arr[i] > second && arr[i] != first) {
+            second = arr[i];
+        }
+    }
+
+    if (second == INT_MIN)
+        printf("There is no second largest element.\n");
+    else
+        printf("The second largest element is %d\n", second);
+
+    return 0;
+}
+
+output:
+
+Enter the number of elements: 4
+Enter 4 elements:
+43 56 78 64
+The second largest element is 64
+
+
+=== Code Execution Successful ===
