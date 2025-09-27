@@ -1,0 +1,45 @@
+converts a string into uppercase and lowercase using string functions :
+
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int main() {
+    char str[100], upper[100], lower[100];
+    int i;
+
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+
+    str[strcspn(str, "\n")] = '\0';
+
+    // Copy original string to upper and lower versions
+    strcpy(upper, str);
+    strcpy(lower, str);
+
+    // Convert to uppercase
+    for (i = 0; upper[i] != '\0'; i++) {
+        upper[i] = toupper(upper[i]);
+    }
+
+    // Convert to lowercase
+    for (i = 0; lower[i] != '\0'; i++) {
+        lower[i] = tolower(lower[i]);
+    }
+
+    printf("Original string: %s\n", str);
+    printf("Uppercase: %s\n", upper);
+    printf("Lowercase: %s\n", lower);
+
+    return 0;
+}
+
+Output:
+
+Enter a string: JONES
+Original string: JONES
+Uppercase: JONES
+Lowercase: jones
+
+
+=== Code Execution Successful ===
